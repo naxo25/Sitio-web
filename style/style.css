@@ -32,6 +32,10 @@ p {
   font-weight: 300;
   color: #111;
 }
+#app {
+  /*display: none;*/
+  opacity: 0;
+}
 
 /* Banner */
 
@@ -45,6 +49,8 @@ p {
   background: grey;
   background-size: cover;
   margin-bottom: 100px;
+  /*transition: .2s;*/
+  /*opacity: 0;*/
 }
 .banner .content {
   max-width: 900px;
@@ -148,7 +154,13 @@ header .navigation li a:hover {
 #About {
   padding: 100px;
   padding-top: 0px;
+  animation: animation 1s ease;
 }
+@keyframes animation {
+  0% {opacity: 0; }
+  100% {opacity: 1; }
+}
+
 .row {
   position: relative;
   width: 100%;

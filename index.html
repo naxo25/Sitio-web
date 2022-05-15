@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ignacio Labra Web</title>
 
+  <!-- <script src=./Jspag/renderHtml.js></script> -->
   <script src=./Jspag/list.js></script>
-  <script src=./Jspag/js.js></script>
+  <script src=./Jspag/naxjs.js></script>
+  <!-- <script defer src="./Jspag/vue.global.prod.min.js"></script> -->
 
   <link rel="stylesheet" type="text/css" href="./style/loader.css">
 
@@ -23,14 +25,11 @@
 <body>
   <div class="center loader"><div class="lds-ripple"><div></div><div></div></div></div>
   <div id='app'>
-    <template v-if=load>
+    <!-- <template>   -->
       <header>
         <a href="https://nacholabraweb.000webhostapp.com" class="logo">Ignacio Labra Web<span>.</span></a>
         <div class="menuToggle" onclick="toggleMenu()"></div>
         <ul class="navigation" onclick="toggleMenu()">
-          <li v-for='link in header'>
-            <a :href="link.to">{{ link.name }}</a>
-          </li>
         </ul>
       </header>
 
@@ -42,66 +41,26 @@
         </div>
       </section>
 
-      <section class="about" id="About" v-if=loadSection[0]>
-        <div class="row">
-          <div class="col50">
-            <h2 class="titleText"><span>A</span>cerca de mí</h2>
-            <br>
-            <p v-for='item in desc_presentacion'>
-              {{item}} <br><br>
-            </p>
-          </div>
-          <div class="col50">
-            <div class="imgBox">
-              <img loading='lazy' src="./images/about.png" width="600" height="300">
-            </div>
-          </div>
-        </div>
-      </section>
+      <section class="about" id="About"></section>
 
-      <section id="Portafolio" loading='lazy' v-if=loadSection[1]>
+      <section id="Portafolio" loading='lazy'>
         <h2 class="title"><span>P</span>ortafolio</h2>
         <br>
         <div class="conatainer">
-          <div class="serviceBox" style="--i:#fff" v-for='item in Portafolio'>
-
-            <div class="imgBox">
-              <img loading='lazy' :src="item.img || noimg">
-            </div>
-
-            <div class="content">
-              <h2> {{item.Titulo}} </h2>
-              <p class="text">{{item.parrafo}}</p>
-              <div class="icons">
-                <a :href="item.links[0].link" target="_blank">
-                  <img :src="`./ico/link.svg`" width="18">
-                </a>
-                <a v-if='item.links[1].link' :href="item.links[1].link" target="_blank">
-                  <img :src="`./ico/github.svg`" width="24">
-                </a>
-                <a v-if='item.Titulo==="NaxChatApp"' href=https://github.com/naxo25/App-Chat-Quasar-VueJs-Firebase/raw/main/dist/Android/naxChat_Capacitor_1.5.2.apk target=_blank>
-                  <img :src="`./ico/download.svg`" width="20">
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
         <center><a href="https://naxo25.github.io/React-Hooks-conCdn/" class="btn" style="margin-top: 50px;">Ver todo</a></center>
       </section>
 
-      <section id='Redes' class="footer" loading='lazy' v-if=loadSection[2]>
+      <section id='Redes' class="footer" loading='lazy'>
         <div>
           <p class="frase">"Conocerte a si mismo es una cualidad necesaria para volverte mejor persona, para los demás, para contigo mismo y para el éxito."</p>
         </div>
         <div class="social">
-          <div v-for='icon in icons' class="icon">
-            <a :href="icon.href" target="_blank">
-              <img :src="`./ico/${icon.ico}.svg`" width="28">
-            </a>
+          <div class="icon">
           </div>
         </div>
       </section>
-    </template>
+    <!-- </template> -->
   </div>
 </body>
 </html>

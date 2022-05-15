@@ -1,6 +1,6 @@
 ## Nacholabraweb
 
-Mi sitio web hecho con configuraciones propias desde cero usando la librería vueJs, css propio y scripts que hice en python para minificar el código. La idea es ir incorporando lo que se me ocurra (imageresizer, tests, eslint, precaching, etc).
+Mi sitio web hecho con configuraciones propias desde cero usando javascript y css propio, scripts que hice en python para minificar el código. La idea es ir incorporando lo que se me ocurra (imageresizer, tests, eslint, precaching, etc).
 
 https://nacholabraweb.000webhostapp.com/
 
@@ -8,21 +8,54 @@ https://nacholabraweb.000webhostapp.com/
 ## Setup
 
 ``` bash
-# install dependencies
-yarn
-
-# serve with servor hot reload at localhost:8080
-yarn dev
-
-# build for production with python minification
-yarn build
+yarn # install dependencies
+yarn dev # serve with servor hot reload at localhost:8080
+yarn build # build for production with python minification
 ```
 
 # Historial
 
 Para poder tener listo lo más rapido posible el DOM realize las siguientes configuraciones.
 
-### Javascript
+### Carga de imágenes sin bloquear el dom
+
+La carga de imágenes solo se reenderiza luego de descargarse completamente.
+
+	const preload = (image, url) => {
+	  var xhr = new XMLHttpRequest();
+	  xhr.open('get', url);
+
+	  xhr.onloadend = (e) => {
+	    console.log('Imagen descargada en el DOM');
+	    image.style.background = `url(${url})`;
+	  };
+
+	  xhr.onprogress = (e) => console.log('Progreso: ' + e.loaded);
+
+	  xhr.onloadstart = (e) => console.log('Iniciando descarga de', url);
+
+	  xhr.send();
+	};
+
+### Precarga de imágenes
+
+	function preloadImgs(image, url) {
+	  fetch(url).then(request => request.blob()).then(() => {
+	    image.src = url;
+	  });
+	}
+
+* https://deployando.net/2020/01/21/precargar-imagenes-javascript/
+* https://www.smashingmagazine.com/2021/04/humble-img-element-core-web-vitals/
+
+### Colas de css criticos
+
+Uso de preload y prefetch para cargar recursos sin bloquear el dom.
+
+	<link rel="preload" href="./style/cards.css" as="style">
+	<link rel="stylesheet" type="text/css" href="./style/cards.css">
+
+### Carga de Javascript diferido
 
 Archivos pesados se cargan a través de promesas.
 
@@ -34,24 +67,7 @@ Archivos pesados se cargan a través de promesas.
 	  document.head.appendChild(script);
 	});
 
-### Colas de css criticos
-
-Uso de preload y prefetch para cargar recursos sin bloquear el dom.
-
-	<link rel="preload" href="./style/min.css" as="style">
-	<link rel="stylesheet" type="text/css" href="./style/cards.css">
-
 https://web.dev/defer-non-critical-css/
-
-### Precarga de imágenes con js
-
-	function preload(image, url) {
-	  fetch(url).then(request => request.blob()).then(() => {
-	    image.src = url;
-	  });
-	}
-
-https://deployando.net/2020/01/21/precargar-imagenes-javascript/
 
 
 ### Herramientas usadas
