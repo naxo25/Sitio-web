@@ -5,7 +5,8 @@ const portafolio = [
     parrafo : 'Chat multiplataforma hecho en Quasar, VueJs, Vuex, Firebase, NodeJs. Puedes mandar gifs, fotos, chats.',
     links   : [
       { name: 'App', link: 'https://asdf-3e590.web.app' },
-      { name: 'Github', link: 'https://github.com/naxo25/App-Chat-Quasar-VueJs-Firebase' }
+      { name: 'Github', link: 'https://github.com/naxo25/App-Chat-Quasar-VueJs-Firebase' },
+      { name: 'download', link: 'https://github.com/naxo25/App-Chat-Quasar-VueJs-Firebase/raw/main/dist/Android/naxChat_Capacitor_1.5.2.apk' }
     ],
     icos    : [ 'vue2', 'nodeJs', 'firebase', 'ionic', 'cordova', 'quasar' ]
   },
@@ -13,8 +14,7 @@ const portafolio = [
     img     : '/images/App/logo-tv.jpg',
     parrafo : 'Aplicación Smart-TV de fútbol para televisores LG.',
     links   : [
-      { name: 'App', link: 'https://cl.estadio.com/' },
-      { name: 'Github', link: '' }
+      { name: 'App', link: 'https://cl.estadio.com/' }
     ],
     icos    : [ 'vue2', 'nodeJs', 'firebase', 'ionic', 'cordova', 'quasar' ]
   },
@@ -23,8 +23,7 @@ const portafolio = [
     img     : '/images/App/auto.png',
     parrafo   : 'Web que hice para la inscripción y canjeo de cupones de los participantes para el sorteo de un auto.',
     links   : [
-      { name:'Portafolio', link:'https://agg7765473-286bb.web.app' },
-      { name: '', link: '' }
+      { name:'Portafolio', link:'https://agg7765473-286bb.web.app' }
     ],
     icos      : [ 'vue2', 'firebase', 'quasar' ]
   },
@@ -32,8 +31,7 @@ const portafolio = [
     img     : '/images/App/2.jpg',
     parrafo : 'Aplicación para llevar el registro de socios, pagos, planes entre otras actividades de un gimnasio.',
     links   : [
-      { name: 'Demo', link: 'https://nacholabraweb.000webhostapp.com/pwa/EjApp/#/Clientes' },
-      { name: 'Github', link: '' }
+      { name: 'Demo', link: 'https://nacholabraweb.000webhostapp.com/pwa/EjApp/#/Clientes' }
     ],
     icos    : [ 'js', 'vueJs', 'nodeJs' ]
   },

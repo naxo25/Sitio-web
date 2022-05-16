@@ -3,6 +3,7 @@ output
 package.json
 ignore
 readme.md
+js.js
 
 style/about.css
 style/contact.css

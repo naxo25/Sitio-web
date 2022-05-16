@@ -203,7 +203,7 @@ header .navigation li a:hover {
 .footer {
   width: 100%;
   min-height: 100vh;
-  background: url('../images/footer.png');
+  background: url('../images/footer.webp');
   background-size: cover;
   justify-content: center;
   align-items: center;

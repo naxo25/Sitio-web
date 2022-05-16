@@ -17,7 +17,7 @@ yarn build # build for production with python minification
 
 Para poder tener listo lo más rapido posible el DOM realize las siguientes configuraciones.
 
-### Carga de imágenes sin bloquear el dom
+### Carga de imágenes sin bloquear el DOM
 
 La carga de imágenes solo se reenderiza luego de descargarse completamente.
 
@@ -72,7 +72,7 @@ https://web.dev/defer-non-critical-css/
 
 ### Herramientas usadas
 * VueJs
-* servor para servidor estático.
+* Servor para servidor estático.
 * https://pagespeed.web.dev/ para métricas de rendimiento.
 
 ### Recursos
